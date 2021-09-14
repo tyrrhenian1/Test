@@ -10,9 +10,9 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            double result = Math.Round(Math.Cos(60 * Math.PI / 180),4);
-            double resultMy = ConsoleApp2.Program.Cos(60 * Math.PI / 180);
-            Assert.AreEqual(resultMy, result);
+            double result = Math.Round(Math.Acos(30 * Math.PI / 180),4);
+            double resultMy = Math.Round(Math.PI / 2 - ConsoleApp2.Program.ArcSin(30*Math.PI/180),4);
+            Assert.AreEqual(result, resultMy);
         }
     }
 }

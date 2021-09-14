@@ -11,24 +11,24 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
         }
-        public static double Cos(double x)
+        public static double ArcSin(double x)
         {
-            const int iterations = 30;
-            var res = 0d;
-            var pow = 1d;
-            var sign = 1;
-
-            for (int i = 0; i < iterations; i++)
+            int steps = 30;
+            double result = 0;
+            for (int i = 0; i < steps; i++)
             {
-                if (i % 2 == 0)
-                {
-                    res += pow * sign;
-                    sign *= -1;
-                }
-                pow *= x / (i + 1);
+                result += (Factorial(2 * i) * Math.Pow(x, 2 * i + 1)) / (Math.Pow(4, i) * Math.Pow(Factorial(i), 2) * (2 * i + 1));
             }
-
-            return Math.Round(res,4);
+            return result;
+        }
+        static int Factorial(int n)
+        {
+            int fact = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                fact = fact * i; //или fact *= i;
+            }
+            return fact;
         }
     }
 }
